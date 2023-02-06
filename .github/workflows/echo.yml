@@ -13,4 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo
-        run: echo ${{text}}
+        run: echo 'x'
