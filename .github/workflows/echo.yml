@@ -12,4 +12,5 @@ jobs:
   printtext:
     runs-on: ubuntu-latest
     steps:
-      run: echo ${{workflow_call.inputs.text}}
+      - name: Echo
+        run: echo ${{workflow_call.inputs.text}}
