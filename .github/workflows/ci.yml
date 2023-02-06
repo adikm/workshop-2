@@ -88,4 +88,4 @@ jobs:
 
 
   call-workflow:
-    uses: ./.github/workflows/echo.yml@new-branch
+    uses: ./.github/workflows/echo.yml
