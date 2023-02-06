@@ -6,8 +6,6 @@ on:
       - main
 
 jobs:
-  ci:
-    strategy:
   lint:
     strategy:
       matrix:
