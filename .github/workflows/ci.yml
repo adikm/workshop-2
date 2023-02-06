@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+concurrency:
+  group: ci-testse-${{ github.ref }}-1
+  cancel-in-progress: true
+
 jobs:
   ci:
     strategy:
