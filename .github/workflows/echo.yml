@@ -13,4 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo
-        run: echo ${{workflow_call.inputs.text}}
+        run: echo ${{text}}
