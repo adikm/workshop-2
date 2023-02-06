@@ -9,8 +9,8 @@ jobs:
   ci:
     strategy:
       matrix:
-        os: [ ubuntu-latest  ]
-        nodeVersion: [ 15 ]
+        os: [ ubuntu-latest, macos-latest, windows-latest ]
+        nodeVersion: [ 12,14,15 ]
     runs-on: ${{ matrix.os }}
 
     steps:
