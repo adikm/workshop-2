@@ -89,3 +89,5 @@ jobs:
 
   call-workflow:
     uses: ./.github/workflows/echo.yml
+    with:
+      text: "some message"
