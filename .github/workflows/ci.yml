@@ -9,8 +9,8 @@ jobs:
   ci:
     strategy:
       matrix:
-        os: [ ubuntu-latest, macos-latest, windows-latest ]
-        nodeVersion: [ 12,14,15 ]
+        os: [ ubuntu-latest  ]
+        nodeVersion: [ 15 ]
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -30,7 +30,6 @@ jobs:
         id: yarn-cache
         with:
           path: |
-            /home/runner/.cache/Cypress
             **/node_modules
           key: our-cache-yarn-${{ hashFiles('**/yarn.lock.json') }}
 
@@ -41,8 +40,44 @@ jobs:
       - name: Lint
         run: yarn lint:ci
 
+  unit-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup NodeJS 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install
+
       - name: Test
         run: yarn test:ci
+
+  e2e-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup NodeJS 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install
 
       - name: e2e
         run: yarn e2e
