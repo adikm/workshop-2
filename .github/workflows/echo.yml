@@ -1,0 +1,15 @@
+name: lint
+
+on:
+  workflow_call:
+    inputs:
+      text:
+        type: string
+        description: osos os
+        default: 'empty'
+        required: false
+jobs:
+  printtext:
+    runs-on: ubuntu-latest
+      steps:
+        run: echo ${{workflow_call.inputs.text}}
