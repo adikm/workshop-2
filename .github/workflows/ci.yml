@@ -6,6 +6,8 @@ on:
       - main
 
 jobs:
+  ci:
+    strategy:
   lint:
     strategy:
       matrix:
@@ -20,9 +22,10 @@ jobs:
           fetch-depth: 0
 
       - name: Setup NodeJS 16
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: 16
+          cache: 'yarn'
 
       - name: Install dependencies
         run: yarn install
