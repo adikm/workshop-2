@@ -88,4 +88,4 @@ jobs:
 
 
   call-workflow:
-    uses: github.com/adikm/workshop-2/.github/workflows/echo.yml@new-branch
+    uses: ./.github/workflows/echo.yml@new-branch
