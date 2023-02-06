@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: ./.github/action/
+        uses: adikm/workshop-2@new-branch
         with:
           who-to-greet: 'Mona the Octocat'
       # Use the output from the `hello` step
